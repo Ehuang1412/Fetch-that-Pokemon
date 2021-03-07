@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 
 const PokemonList = () => {
+  const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const pokemonList = useSelector(state => state.PokemonList);
   useEffect( ()=>{
@@ -49,7 +50,10 @@ const PokemonList = () => {
 
   };
 
-  return(<div> <h1>Catch your Pokemon</h1> {showData()}</div>
+  return(<div> <h1>Catch your Pokemon</h1> 
+  
+
+  {showData()}</div>
   )
 };
 
