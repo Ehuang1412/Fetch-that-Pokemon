@@ -4,6 +4,7 @@ import _ from "lodash";
 import { GetPokemonList } from "../actions/pokemonActions";
 import { Link } from "react-router-dom";
 
+
 const PokemonList = () => {
   const dispatch = useDispatch();
   const pokemonList = useSelector(state => state.PokemonList);
@@ -17,6 +18,7 @@ const PokemonList = () => {
 
   const showData = () => {
     if( !_.isEmpty(pokemonList.data)) {
+
       return  (
         <div className={"list-wrapper"}>
           {pokemonList.data.map(el => {
@@ -30,6 +32,9 @@ const PokemonList = () => {
           })}
         </div>
       )
+
+      return <p> have data </p>
+
     }
 
     if( pokemonList.loading ){
@@ -39,7 +44,9 @@ const PokemonList = () => {
     if(pokemonList.errorMsg !== ""){
       return <p>{pokemonList.errorMsg}</p>
     }
+
     return <p>unable to get data</p>
+
   };
 
   return(<div> Pokemon List {showData()}</div>
