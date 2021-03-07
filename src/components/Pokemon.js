@@ -1,6 +1,12 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Pokemon = () => {
+const Pokemon = (props) => {
+  const pokemonName = props.match.params.pokemon;
+  const dispatch = useDispatch();
+  const pokemonState = useSelector(state => state.pokemon);
+
+  console.log("pokemonNmae,",pokemonName)
   return(<div> Pokemon </div>
   )
 };
